@@ -113,3 +113,40 @@ let a = [30, 40, 50];
 let b = [10, 20, ...a];
 console.log(b);
 
+
+// Array manipulation methods
+
+const items = [
+  {name:'tv', price:20000},
+  {name:'book', price:100},
+  {name:'album', price:50},
+  {name:'phone', price:15000},
+  {name:'fan', price:3000}
+  ];
+
+  // filter method
+  const filterItems = items.filter((item)=>{
+    return item.price <= 100;
+  })
+  console.log(filterItems);
+
+  // find method
+  const foundItem = items.find((item)=>{
+    return item.name === 'phone';
+  })
+  console.log(foundItem);
+
+  // map method
+  const itemNames = items.map(item=>{
+    return item.name;
+  })
+  console.log(itemNames);
+
+  // reduce method
+  const totalPrice = items.reduce((currentTotal, item)=>{
+    return item.price + currentTotal
+  }, 0)
+  console.log(totalPrice);
+
+  // forEach method
+  items.forEach(item=>console.log(item.price));
