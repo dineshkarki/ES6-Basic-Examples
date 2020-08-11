@@ -150,3 +150,26 @@ const items = [
 
   // forEach method
   items.forEach(item=>console.log(item.price));
+  
+  // object duplicates find method
+
+   const obj1 = {Name: "Rahim", City: 'Hyderabad', Country: "India" };
+      const obj2 = {Name: "Rahim", Country: "India", City: 'Hyderabad' };
+     
+     function isEqual(a,b) {
+       var prop1 = Object.getOwnPropertyNames(a);
+       var prop2 = Object.getOwnPropertyNames(b);
+       console.log(prop1, prop2);
+       if(prop1.length !== prop2.length) {
+         return false;
+       }
+       for(var i=0; i<prop1.length; i++) {
+         var propName = prop1[i];
+         if(a[propName] !== b[propName]) {
+           return false
+         }
+       }
+       return true
+     }
+
+     console.log(isEqual(obj1, obj2));
